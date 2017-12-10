@@ -52,6 +52,12 @@ The floating point matchers are `WithinULP` and `WithinAbs`. `WithinAbs` accepts
 
 Do note that ULP-based checks only make sense when both compared numbers are of the same type and `WithinULP` will use type of its argument as the target type. This means that `WithinULP(1.f, 1)` will expect to compare `float`s, but `WithinULP(1., 1)` will expect to compare `double`s.
 
+Alternatively you can use Approx
+
+``` cpp
+    REQUIRE(Approx(0.8676960543) == math.Sin(3.4));
+```
+
 
 ## Custom matchers
 It's easy to provide your own matchers to extend Catch or just to work with your own types.
